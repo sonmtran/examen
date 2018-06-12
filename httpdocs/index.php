@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors',1);
-error_reporting(15);
+//ini_set('display_errors',1);
+//error_reporting(15);
 
 
 # Declare env variable of application
