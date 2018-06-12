@@ -1,12 +1,12 @@
 <?php
 # Declare path to STATIC, UPLOAD
 define('PATH_HTTPDOC', 	realpath(dirname(__FILE__) . '/httpdocs'));
-define('PATH_STATIC', 	PATH_HTTPDOC . './static');
+define('PATH_STATIC', 	PATH_HTTPDOC . '/static');
 define('URL_STATIC', 	'./static');
 
 define('PATH_UPLOAD', 	PATH_HTTPDOC . '/upload');
-define('URL_UPLOAD',  	'./static/upload/_multiThumbs/');
-define('REPLACE_UPLOAD',  	'./static/upload');
+define('URL_UPLOAD',  	'/static/upload/_multiThumbs/');
+define('REPLACE_UPLOAD',  	'/static/upload');
 
 
 
