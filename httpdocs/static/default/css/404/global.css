@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0}
+body{ font-family:'Open Sans'}
+a:hover, a:link{ outline:none; text-decoration:none}
+#header-logo{ padding:9px 0; text-align:center}
+.container{ width:1140px; margin:0 auto}
+.banner-top img{ max-width:100%; height:auto; position:relative; top:-55px}
+.banner-top { background:url(../../images/404/bg-img-slider.png) repeat-x left bottom #1c3f95}
+#footer{ width:100%; height:10px; background:#ee3a43; position:absolute; left:0; bottom:0}
+.title-page{ text-align:center; margin:28px 0; font-weight:normal; font-size:26px; text-transform:uppercase}
+.mark-img {
+    height: 193px;
+    left: 0;
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    width: 193px;
+}
+.mark-img a.img-big {
+    display: block;
+    height: 193px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 193px;
+}
+.mark-img a::after {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.mark-img a.img-big::before {
+    background: rgba(0, 0, 0, 0) url("../../images/404/mark-img.png") no-repeat scroll 0 0;
+    content: " ";
+    display: block;
+    height: 193px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 193px;
+    z-index: 5;
+}
+.thumb-nail .item-thumb{ width:33.333%; float:left; text-align:center}
+.clear{ clear:both}
+.thumb-nail p a{ color:#ee3a43; font-size:19px;} 
+.txt-banner h1{ font-size:60px; color:#4275f2}
+.txt-banner p{ font-size:28px; color:#fff;font-weight: 300;}
+.txt-banner { position:absolute; top:18px; left:200px;}
+.banner-top .container{ position:relative}
+
+.banner-top img {
+	animation: ring 2s 1s ease-in-out infinite;
+	transform-origin: 50% 4px;
+}
+.mark-img:hover .mask-black{opacity: 1;}
+.mask-black{background:rgba(0,0,0,0.7);display: block; height: 100%; width: 100%;position: absolute;top: 0;left: 0;     opacity: 0;transition: all 0.5s ease 0s;-moz-transition: all 0.5s ease 0s;-webkit-transition: all 0.5s ease 0s}
+
+@media (max-width: 1025px){
+	.container{ width:100%}
+	.banner-top img{ top:-22px;}
+	.txt-banner { left:100px}
+	.txt-banner h1{ font-size:46px}
+	.txt-banner p{ font-size:18px}
+}
+@media (max-height: 730px)
+{
+	#footer{ position:relative; margin-top:10px}
+}
+@media (max-width: 640px){
+	
+	.thumb-nail .item-thumb{ width:100%}
+	#footer{ position:inherit; margin-top:15px;}
+	.banner-top {
+		background: #1C3F95 url("../../images/404/bg-img-slider.png") repeat-x scroll left bottom;
+		background-size: auto 40px;
+	}
+	.banner-top img{ top:-22px;}
+	.txt-banner { left:80px}
+	.txt-banner h1{ font-size:36px}
+	.txt-banner p{ font-size:16px}
+}
+@media (max-width: 400px)
+{
+	.txt-banner { left:40px; top:10px}
+	.txt-banner h1{ font-size:20px}
+	.txt-banner p{ font-size:13px}
+	.banner-top {
+		background: #1C3F95 url("../../images/404/bg-img-slider.png") repeat-x scroll left bottom;
+		background-size: auto 30px;
+	}
+	
+}
+#header-logo{z-index: 20;}

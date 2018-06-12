@@ -1,0 +1,126 @@
+<div class="title-blockquote"><p class="text_blockquote">Chương trình Anh ngữ luyện thi</p></div>
+<div class="wp-Register">
+	<p class="style-red">Con bạn có tự tin trong các bài thi quốc tế IELTS, TOEFL, TOEIC ?</p>
+    <p><b>ILA là lựa chọn tuyệt vời:</b></p>
+    <ul class="list-row">
+    	<li>Tiêu chuẩn chất lượng NEAS.</li>
+        <li>Đội ngũ giáo viên là người nói tiếng Anh bản xứ, tận tâm, có trình độ chuyên môn cao.</li>
+        <li>Phương pháp giảng dạy tương tác thông qua các hoạt động vui nhộn, thú vị với giáo trình được cập nhật nhất.</li>
+        <li>Chương trình luyện thi chứng chỉ quốc tế của ILA được biên soạn rất công phu, nhằm trang bị kiến thức hoàn chỉnh cho học viên tham dự kỳ thi lấy chứng           	      chỉ quốc tế, giúp học viên đạt được mục tiêu mong muốn: <b>IELTS 3.5 - 7.0+, TOEFL iBT 40 - 95+, TOEIC 400 - 750+</b></li>
+    </ul>
+    <div class="clear">
+    	<div class="form-register">
+    	   <?php if ($this->STATUS == 'success') :?>
+    	       <script>
+    	       (function() {
+      				ga('send', 'event', 'category', 'action', {
+      					  'metric1': 1
+      					});
+      			})();
+    	       </script>
+    	       <div class="title-block"><span>Đăng ký thành công</span></div>
+                <h4 style="line-height:20px;margin-bottom:350px;margin-top:30px;color: green">Cám ơn bạn! Thông tin của bạn đã được đăng ký. Nhân viên chúng tôi sẽ sớm liên lạc bạn.</h4>
+            <?php else : ?>
+            <script src="<?php echo URL_DEFAULT_JS?>/check_error.js"></script>
+            <div class="title-block"><span>Đăng ký</span></div>
+            
+            <div class="wp_contact">
+                  <div class="errors">
+                	<?php
+                		if (! empty($this->ERRORS))
+                		{
+                			echo '<ul>';
+                			
+                			foreach ($this->ERRORS as $field => $arrError)
+                			{
+                				echo '<li>- <b>'. $this->translate($field) .'</b>: '.current($arrError).'</li>';
+                			}
+                			
+                			echo '</ul>';
+                		}
+                	?>
+                	</div>
+                		
+                	<?php echo $this->FORM?>	
+            </div>
+            <?php endif;?>
+        </div>
+    	
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#id_city').on('change', function() {
+                var brands = $('#id_city option:selected');
+                var val = '';
+                $(brands).each(function(index, brand){
+                    val = $(this).val();
+                });
+                if(val != null && val != 0)
+                {
+                    $('#area-city2').hide();
+                    jQuery.ajax({
+                        type:"POST",
+                        url:"/index/ajax-centre",
+                        data:{id_city:val},
+                        dataType: "json",
+                        success:function(data){
+                            $("#id_center").html(data);
+                        },
+                        error:function(){
+                            console.log('ERROR LOAD CENTRER');
+                        },
+                    });//end Ajax
+                }
+                if(val == 0 && val != '')
+                {
+                    $('#area-city2').show();
+                    $("#id_center").html('<option value="0">&nbsp</option>');
+                }
+
+                if(val == '')
+                {
+                    $("#id_center").html('<option value="0">&nbsp</option>');
+                }
+        });
+
+    });
+</script>
+<style type="text/css">
+    #ui-datepicker-div{background:#fff;}
+    .errors ul{border:1px solid #f00;padding:10px;color:#f00;background:#FCF2F2;margin-bottom:20px;}
+    .multiselect-container > li > a > label input{margin-right:5px !important;}
+    .wp_contact input {
+        border: 1px solid #B3A8A8;
+    }
+    .select_contact select
+    {
+        border-color: #B3A8A8;
+    }
+    .form_5 .form-group input
+    {
+        width: 98%;
+    }
+</style>
+
+
+<?php if ($this->ERROR_EMAIL == true && $this->VAL_CITY == 0): ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#area-city2').show();
+            $("#id_center").html('<option value="0">&nbsp</option>');
+        });
+    </script>
+<?php endif ?>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+<?php $pre = LANGUAGE =="en"?"en.":""?>
+<div class="wp_footer">
+	<div class="footer_first">
+		<h3><?php echo $this->translate('english_program');?></h3>
+		<ul class="list_footer">
+			<li><a target="_blank" class=" {JUMPSTART} "
+				href="<?php echo $this -> EX_LINK['jumpstart'][LANGUAGE]?>" title="ILA Jumpstart">ILA
+					Jumpstart</a></li>
+			<li><a target="_blank"  class=" {JUNIOR} "
+				href="<?php echo $this -> EX_LINK['junior'][LANGUAGE]?>" title="ILA Super Juniors">ILA
+					Super Juniors</a></li>
+			<li><a target="_blank" class=" {SMARTTEENS} "
+				href="<?php echo $this -> EX_LINK['smartteens'][LANGUAGE]?>"
+				title="ILA Smart Teens ">ILA Smart Teens</a></li>
+			<li><a target="_blank"  class=" {GLOBAL} "
+				href="<?php echo $this -> EX_LINK['globalenglish'][LANGUAGE]?>" 
+				title="ILA Global English">ILA
+					Global English</a></li>
+			<li><a target="_blank"  class=" {BUSINESS} "
+				href="<?php echo $this -> EX_LINK['business'][LANGUAGE]?>" 
+				title="Business English">ILA
+					Business English</a></li>		
+			<li><a target="_blank" class=" {CORPORATE} "
+				href="<?php echo $this -> EX_LINK['corporate_training'][LANGUAGE]?>"
+				title="ILA Corporate Training">ILA Corporate Training</a></li>
+			<li><a target="_blank"  class=" {ACADEMIC} "
+				href="<?php echo $this -> EX_LINK['overseapre'][LANGUAGE]?>"
+				title="ILA Overseas Preparation">ILA Overseas Preparation </a></li>
+			<li><a target="_blank" class=" {EXAM} "
+					href="<?php echo $this -> EX_LINK['examenglish'][LANGUAGE]?>" title="ILA Exam English">ILA
+					Exam English</a></li>
+			<li><a target="_blank" class=" {OVERSEA} "
+					href="<?php echo $this -> EX_LINK['duhoc'][LANGUAGE]?>" title="ILA Overseas Study">ILA
+					Overseas Study Centres</a></li>
+			<li><a target="_blank"  class=" {TEACHER} "
+				href="http://teachenglishilavietnam.com/" title="Teacher Training Courses">Teacher
+					Training Courses</a></li>
+		</ul>
+	</div>
+	
+	<div class="footer_second">
+		<h3><?php echo $this->translate('training_centre');?>  </h3>
+		<div class="map">
+			<a class="hanoi"  href="<?php echo $this -> HOST.$this->url(array('city' => 'ha-noi'),'k_city') ?>" title="hà nội"><?php echo LANGUAGE =="vi"? "hà nội" :Defined_Common::toNonUnicode("hà nội") ?></a> 
+			<a class="danang"  href="<?php echo $this -> HOST.$this->url(array('city' => 'da-nang'),'k_city')?>" title="đà nẵng"><?php echo LANGUAGE =="vi"? "đà nẵng" :Defined_Common::toNonUnicode("đà nẵng") ?></a> 
+			<a class="bienhoa"  href="<?php echo $this -> HOST.$this->url(array('city' => 'bien-hoa'),'k_city')?>" title="biên hòa"><?php echo LANGUAGE =="vi"? "biên hòa" :Defined_Common::toNonUnicode("biên hòa") ?></a> 
+			<a class="vungtau"  href="<?php echo $this -> HOST.$this->url(array('city' => 'vung-tau'),'k_city')?>" title="vũng tàu"><?php echo LANGUAGE=="vi"? "vũng tàu" :Defined_Common::toNonUnicode("vũng tàu") ?></a> 
+			<a class="binhduong"  href="<?php echo $this -> HOST.$this->url(array('city' => 'binh-duong'),'k_city')?>" title="bình dương"><?php echo LANGUAGE=="vi"? "bình dương" :Defined_Common::toNonUnicode("bình dương") ?></a>
+			<a class="hochiminh"  href="<?php echo $this -> HOST.$this->url(array('city' => 'ho-chi-minh'),'k_city')?>" title="hồ chí minh"><?php echo LANGUAGE=="vi"? "hồ chí minh" :Defined_Common::toNonUnicode("hồ chí minh") ?></a>
+			
+			
+		</div>
+	</div>
+	<div class="footer_thirst">
+		<h3> <?php echo $this->translate('head_office');?>  </h3>
+		<p> <font style="font-weight: bold;"><?php echo $this->translate('ila_Nguyen_Dinh_Chieu');?></font>   <br /> <?php echo $this->translate('address');?></p>
+		<p class="text_phone text_ft">
+			<a title="phone">+84 8 3521 8788</a>
+		</p>
+		<!-- 
+		<p class="text_fax text_ft">
+			<a title="phone"> +84 8 3521 8799</a>
+		</p>
+		 -->
+		<p class="text_email text_ft">
+			<a href="mailto:info@ilavietnam.com" title="email">info@ilavietnam.com</a>
+		</p>
+		<p> <?php echo $this->translate('training_courses');?><a
+				href="mailto:celta@ilavietnam.com" title="email">celta@ilavietnam.com</a>
+		</p>
+		<p><?php echo $this->translate('teach_contact');?><a
+				href="mailto:teach@ilavietnam.com" title="email">teach@ilavietnam.com</a>
+		</p>
+		<div class="block_last">
+			<a href="http://www.ilavietnam.edu.vn" target="_blank" title="logo" class="logo_footer">logo</a>
+			<div class="share">
+				<div class="wp_share">
+					<a target="_blank" title="facebook"
+						href="https://www.facebook.com/ilavietnam" class="facebook">facebook</a>
+					<a target="_blank" title="twitter"
+						href="https://twitter.com/ilavietnam" class="twitter">twitter</a>
+					<!-- 	
+					<a target="_blank" title="photograp"
+						href="http://instagram.com/ilavietnam" class="photograp">photograp</a>
+					 -->	
+					<a target="_blank" title="youtube"
+						href="https://www.youtube.com/user/ILAVietnam1" class="youtube">youtube</a>
+					<!-- 	
+					<a target="_blank" title="in"
+						href="https://www.linkedin.com/company/ila-vietnam" class="in">in</a>
+					 -->	
+					<a target="_blank" title="google"
+						href="https://plus.google.com/+ilavietnam/posts" class="google">google</a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="footer_last">
+		<div class="wp_last">
+			<img src="<?php echo $this -> HOST.URL_DEFAULT_IMAGE ;?>/image_footer.jpg" alt="" />
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="coppy_right">
+		<p> <?php echo $this->translate('copyright');?> </p>
+		<p> <?php echo $this->translate('design_by');?><a target="_blank" href="http://silkwires.com/">Silkwires</a>
+		</p>
+	</div>
+</div>
+
+

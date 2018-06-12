@@ -1,0 +1,28 @@
+.block_logo li {cursor: pointer;}
+.error{display:block;clear: both;}
+		.errors ul{
+			width: 100%;
+			background: #FFEAEA;
+			border: 1px solid #f00;
+			padding: 8px 25px;
+			color: #f00;
+			margin-bottom: 21px;
+		}
+.selected-2 {
+  color: #fff !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.effect_last .icnext{
+	bottom: 0;
+    height: 100%;
+    left: 0;
+    margin-left: 0;
+    padding-top: 100px;
+    width: 100%;
+}
+.effect_last .icnext::before{
+	 margin-top: 100px;
+    right: 81px;
+}
+.someTL33{}

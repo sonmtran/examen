@@ -1,0 +1,154 @@
+<div class="header_top">
+	<div class="wp_header_top">
+		<div class="menutop">
+			<ul class="wp_menutop <?php echo LANGUAGE =="vi" ?"menutop_vn":"" ?> ">
+				
+				<li><a class="ila-top-brand" href="<?php echo $this -> HOST;?>"
+					title="<?php echo $this->translate('ila_corporate')?>"><?php echo $this->translate('ila_corporate')?></a>
+				</li>
+				 
+				<li>
+					<!-- <a href="<?php echo $this -> HOST?>/center" -->
+					<a href="javascript:"
+					title="<?php echo $this->translate('training_centres')?>"><?php echo $this->translate('training_centres')?></a>
+					<ul class="submenu_top">
+						<li>
+							<div class="top_sub"> <?php echo $this -> LIST_CITY; ?> </div>
+							<?php echo $this -> LIST_CENTER;?>
+							
+							<!-- Edit center list -->
+							
+							
+							
+							
+							<!-- End edit center list -->
+                        </li>
+					</ul>
+				</li>
+					
+					
+				<li>
+					<a href="javascript:"
+						title="<?php echo $this->translate('gallery')?>"><?php echo $this->translate('gallery')?></a>
+					
+					<ul class="sub">
+						
+						<?php foreach ($this -> PROGRAMS as $program):?>
+						<?php if($program['type']) continue;?>
+						
+							<li>
+								<a href="<?php echo $this -> HOST.$this -> url(array('alias' => $program[Defined_Common::getLanguageField('alias')] ),'k_gallery') ?>"><?php echo $program['name']?></a>
+							
+							<?php 
+							
+		
+							$arrCategory = array_filter($this -> CATEGORY, function  ($var) use($program) {
+								return $var['id_program'] == $program['id'];
+							});
+
+							?>
+							<?php if(count($arrCategory) >0):?>
+								<ul class="sub sub_lv1 sub-category">
+										<?php foreach ($arrCategory as $category):?>
+										<?php if($program['id'] == $category['id_program']):?>
+										<li>
+											<a href="<?php echo $this -> HOST .$this -> url(array('program' => $program[Defined_Common::getLanguageField('alias')],'category' => $category[Defined_Common::getLanguageField('alias')]),'k_gallery_city');?>"><?php echo LANGUAGE =="vi"?$category['name_vi']:$category['name'];?></a>
+										</li>
+										<?php endif;?>
+										<?php endforeach;?>
+								</ul>
+							<?php endif;?>
+							</li>
+						     
+						<?php endforeach;?>
+						
+						
+						<li>
+							<a href="<?php echo $this -> HOST.$this -> url(array(),'k_gallery_summer') ?>"><?php echo $this -> translate('ila_summer')?></a> 
+				
+								<ul class="sub sub_lv1 sub-category">
+									<?php foreach ($this ->PROGRAMS as $orther):?>
+									<?php if(!$orther['type']) continue;?>
+									<li>
+										<a href="<?php echo $this -> HOST .$this -> url(array('group' =>$orther[Defined_Common::getLanguageField('alias')]),'k_summer_group')?>"><?php echo LANGUAGE == "vi" ?$orther['name_vi']:$orther['name'] ;?></a>
+									</li>
+									
+									<?php endforeach;?>
+								</ul>
+							
+						</li>
+					</ul>
+					
+				</li>
+					
+				<li>
+					<?php $sAliasJob =  LANGUAGE =="vi"?"nghe-nghiep-tai-ila":"at-ila"?>
+					<a href="<?php echo $this -> HOST.$this-> url(array('article' => $sAliasJob),'k_job_ila')?>" target="_blank"
+						title="<?php echo $this->translate('job_ila')?>"> <?php echo $this->translate('job_ila')?> </a>
+				</li> 
+				
+			</ul>
+		</div>
+		<div class="button_group">
+			<a class="button_teach" target="_blank" href="http://teachenglishilavietnam.com/" title="<?php echo $this->translate('teach_ila')?>"><?php echo $this->translate('teach_ila')?></a>
+			<a class="button_login" target="_blank" href="http://www.ilavietnam.com/ilaportal/index.php?option=com_userdetail&view=user&task=login&Itemid=107&lang=en" title="<?php echo $this->translate('member_login')?>"><?php echo $this->translate('member_login')?></a>
+		</div>
+		<div class="header_right">
+					<div class="wp_header_right">
+				<ul class="wp_lang">
+					<li class="en {CLASS_EN}"><a class="ch_lang"
+						href="{LINK_EN}" title="ENG">ENG</a></li>
+					<li class="vn {CLASS_VN}"><a class="ch_lang"
+						href="{LINK_VN}" title="VIE">VIE</a></li>
+				</ul>
+				
+					<!-- 
+					
+					<a class="link_contact"
+					href="<?php echo $this -> HOST?>/contact"
+					target="_blank" title="CONTACT US"><?php echo $this->translate('contact_us')?></a>
+					 -->
+					<a class="link_contact"
+					href="<?php echo $this -> HOST.$this -> url(array(),'k_head_office');?>"
+					target="_blank" title="CONTACT US"><?php echo $this->translate('contact_us')?></a> 
+					
+					
+			</div>
+		</div>
+		<div class="share">
+			<div class="wp_share">
+				<a class="facebook" target="_blank"
+					href="https://www.facebook.com/ilavietnam" title="facebook">facebook</a>
+				<a class="twitter" target="_blank"
+					href="https://twitter.com/ilavietnam" title="twitter">twitter</a> 
+				<!-- 	
+				<a class="photograp" target="_blank"
+					href="http://instagram.com/ilavietnam" title="photograp">photograp</a>
+				<a class="in" target="_blank"
+					href="https://www.linkedin.com/company/ila-vietnam" title="in">in</a>
+				 -->	
+				<a class="youtube" target="_blank"
+					href="https://www.youtube.com/user/ILAVietnam1" title="youtube">youtube</a>
+				<a class="google" target="_blank"
+					href="https://plus.google.com/+ilavietnam/posts" title="google">google</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="headermb" class="headermb">
+	<div class="h_top">
+		<div class="right">
+			<a class="en  {CLASS_EN}"
+				href="{LINK_EN}">en</a> 
+			<a class="vn  {CLASS_VN}"
+				href="{LINK_VN}">vn</a>
+		</div>
+		<div class="button_group mb">
+				<a class="button_teach" target="_blank" href="http://teachenglishilavietnam.com/" title="TEACH AT ILA"> Teach at ILA</a>
+				<a class="button_login" href="http://www.ilavietnam.com/ilaportal/index.php?option=com_userdetail&view=user&task=login&Itemid=107&lang=en" title="Member Login">Member Login</a>
+		</div>
+		<div class="nav"></div>
+	</div>
+</div>

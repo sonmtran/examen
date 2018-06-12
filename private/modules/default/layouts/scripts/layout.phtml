@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<!--<![endif]-->
+
+	<head>
+	
+		<meta name="viewport" content="user-scalable=no, width=device-width, minimum-scale=1, maximum-scale=1">
+	        <?php echo $this->headMeta()?>
+			
+		<link rel="icon" href="<?php echo URL_DEFAULT_IMAGE ;?>/favicon.ico" type="image/x-icon" />
+	   		<?php echo $this->headTitle()?>
+	      	<?php echo $this->headLink()?>
+	        <!-- jQuery KenBurn Slider  -->
+	        <?php echo $this->headScript()?>
+    	 <script src="https://apis.google.com/js/platform.js" async defer>
+    	 	{lang: '<?php echo LANGUAGE;?>'}
+    	 </script>
+    	 
+    	 <script>
+
+    	    /* arr lang for facebook api*/
+			var arrLang = {en:'en_US',vi:'vi_VN'};
+	    	 $(document).ready(function() {
+	    		 common.facebook_like(arrLang['<?php echo LANGUAGE?>']);
+	       	 });
+			
+    	 </script>
+
+    	<!-- Facebook Pixel Code -->
+		<script>
+		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+		document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+		fbq('init', '276911895974467');
+		fbq('track', "PageView");</script>
+		<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=276911895974467&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
+
+	</head>
+	<body class="<?php echo (LANGUAGE=="vi") ?"body_vn":"body_en"?>" >
+		<?php include_once( $_SERVER["DOCUMENT_ROOT"].'/analyticstracking.php'); ?>
+		<?php
+		$get_action = Zend_Controller_Front::getInstance ()->getRequest ()->getControllerName ();
+		$fullwidth = $get_action == "program" ? true : false;
+		?>
+		<div id="header" class="header">
+	        
+	        	<?php echo $this->BlkHeader(); ?>
+	        	
+		</div>
+			<?php echo $this->BlkMainSlider(); ?>
+
+		<div id="container" class="container">
+			<div class="wp_container">
+				<div class="content <?php echo $fullwidth?"fullwidth":"";?>">
+	
+				<?php echo $this->layout()->content; ?>
+	                    
+				</div>
+	
+	            <?php  echo $fullwidth ?"" :$this->BlkLogo()?>
+			</div>
+		</div>
+	<!-- container -->
+
+		<div class="clearfix"></div>
+		<div id="footer" class="footer">
+	            
+		 	<?php echo $this->BlkFooter(); ?>
+			 	
+	    </div>
+        
+         <?php //echo $this->BlkChat(); ?>
+        <script type="text/javascript" src="<?php echo URL_DEFAULT_JS?>/analytics.js"></script>
+	</body>
+
+</html>
+
+

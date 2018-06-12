@@ -1,0 +1,115 @@
+<form class="top" method="post" name="register" id="frmRegister">
+
+    <div class="form-group select_custom">
+        <label for="Campaign"><?php echo $this->element->id_city->getLabel()?></label>
+        <div class="select_contact">
+            <?php echo $this->element->id_city?>
+        </div>
+        <div class="clearfix"></div>
+    </div><!-- end form-group -->
+
+    <div class="form-group select_custom" id="area-city2" style="display: none">
+        <label for="Campaign">
+
+        </label>
+        <div class="select_contact">
+            <?php echo $this->element->id_city2?>
+        </div>
+        <div class="clearfix"></div>
+    </div><!-- end form-group -->
+
+
+
+	<div class="form-group select_custom">
+		<label for="Campaign"><?php echo $this->element->id_center->getLabel()?></label>
+		<div class="select_contact">
+			<?php echo $this->element->id_center?>
+		</div>
+		<div class="clearfix"></div>
+	</div><!-- end form-group -->
+	
+	<?php 
+		$arrOptions = $this->element->getDecorator('ViewScript')->getOptions();
+		if (! empty($arrOptions['SCHEDULES']))
+		{
+			$date = date_create($arrOptions['SCHEDULES']['start_date']);
+			
+			echo '<div class="wp_blok_link">';
+			echo '<p>' . $arrOptions['SCHEDULES'][Defined_Common::getLanguageField('name')] . '</p>';
+			echo '<p>'.$this->translate('class_code').': ' . $arrOptions['SCHEDULES']['class_code'] . '</p>';
+			echo '<p>'.$this->translate('start_date').': ' . date_format($date,"d/m/Y") . '</p>';
+			echo '</div>';
+			//echo '<input type="hidden" name="id_schedules" value="' . $arrOptions['SCHEDULES']['id'] . '"/>';
+		}
+	?>
+	<div class="clearfix"></div>
+	
+	<div class="form_1">
+		<strong><?php echo $this->translate('per_info');?></strong>
+		<div class="form-group">
+			<label for="Campaign">
+				<?php echo $this->element->parent_name->getLabel()?>
+				<span><?php echo $this->translate('in_case_parent');?></span>
+			</label>
+			<?php echo $this->element->parent_name?>
+		</div>
+	</div><!-- end form_1 -->
+	<div class="clearfix"></div>
+	
+	<div class="form_2">
+		<div class="group_contact">
+		
+			<div class="form-group">
+				<label for="Campaign"><?php echo $this->element->fullname->getLabel()?></label>
+				<?php echo $this->element->fullname?>
+			</div><!-- end form-group -->
+					
+			<div class="form-group width_25 select_custom">
+				<label for="Campaign"><?php echo $this->element->gender->getLabel()?></label>
+				<div class="select_contact select_custom">
+					<?php echo $this->element->gender?>
+				</div>
+			</div><!-- end form-group -->
+					
+			<div class="form-group first width_25">
+				<label for="Campaign"><?php echo $this->element->dob->getLabel()?></label>
+				<p class="txt_date">
+					<?php echo $this->element->dob?>
+					
+				</p>
+			</div><!-- end form-group -->
+			
+		</div><!-- end group_contact -->
+	</div><!-- end form_2 -->
+	<div class="clearfix"></div>
+	
+	<div class="form_4">
+		<strong><?php echo $this->translate('con_info');?></strong>
+		<div class="form-group">
+			<label for="Campaign"><?php echo $this->element->mobile->getLabel()?></label>
+			<?php echo $this->element->mobile?>
+		</div><!-- end form-group -->
+		
+		<div class="form-group">
+			<label for="Campaign"><?php echo $this->element->email->getLabel()?></label>
+			<?php echo $this->element->email?>
+		</div><!-- end form-group -->
+	</div><!-- end form_4 -->
+	<div class="clearfix"></div>
+	
+	<div class="form_5">
+		<div class="group_contact">
+			<div class="form-group ">
+				<label for="Campaign"><?php echo $this->element->address->getLabel()?></label>
+				<?php echo $this->element->address?>
+			</div><!-- end form-group -->
+				
+
+		</div><!-- end group_contact -->
+	</div><!-- end form_5 -->
+	<div class="clearfix"></div>
+	
+	<div class="wp_bt">
+		<?php echo $this->element->formsubmit?>
+	</div><!-- end wp_bt -->
+</form>
