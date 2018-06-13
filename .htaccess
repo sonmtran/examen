@@ -1,1 +1,3 @@
-DirectoryIndex httpdocs/index.php
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !httpdocs/
+RewriteRule (.*) /httpdocs/$1 [L]
