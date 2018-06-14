@@ -2,7 +2,6 @@
 //ini_set('display_errors',1);
 //error_reporting(15);
 
-
 # Declare env variable of application
 defined('APPLICATION_ENV')
 	|| define('APPLICATION_ENV',
